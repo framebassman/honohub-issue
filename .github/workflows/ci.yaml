@@ -31,6 +31,9 @@ jobs:
       - name: Run application
         run: |
           npm run dev &
+      - name: Run tests
+        run: |
+          npm test
       # - name: UI unit tests
       #   run: |
       #     npm test
