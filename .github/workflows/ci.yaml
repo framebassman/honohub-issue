@@ -34,6 +34,9 @@ jobs:
       - name: Run tests
         run: |
           npm test
+      - uses: sidharthv96/playwright-report-action
+        with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
       # - name: UI unit tests
       #   run: |
       #     npm test
