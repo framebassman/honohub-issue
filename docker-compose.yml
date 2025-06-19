@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17.5-alpine3.21
+    container_name: honohub-issue-postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - pgsdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=test
+
+volumes:
+  pgsdata:
