@@ -1,16 +1,21 @@
 {
   "name": "honohub-issue",
   "scripts": {
-    "dev": "wrangler dev",
+    "dev": "wrangler dev --host=0.0.0.0 --port=3000",
     "deploy": "wrangler deploy --minify",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "build": "tsc -p ./tsconfig.express.json",
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.1",
+    "express": "^5.1.0",
     "hono": "^4.7.11",
     "honohub": "^0.3.0"
   },
   "devDependencies": {
+    "@types/express": "^5.0.3",
+    "typescript": "^5.8.3",
     "wrangler": "^4.4.0"
   }
 }

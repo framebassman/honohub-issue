@@ -11,10 +11,13 @@ services:
       - POSTGRES_PASSWORD=test
       - POSTGRES_DB=test
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: Express.Dockerfile
+      # dockerfile: Dockerfile
     container_name: honohub-issue-app
     ports:
-      - 8787:8787
+      - 80:3000
 
 volumes:
   pgsdata:
