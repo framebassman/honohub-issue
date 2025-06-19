@@ -30,7 +30,7 @@ jobs:
           docker compose up -d
       - name: Run application
         run: |
-          npm run dev &
+          npm run dev > app.logs & 2>&1
       - name: Run tests
         run: |
           npm test
@@ -40,12 +40,14 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-      # - name: UI unit tests
-      #   run: |
-      #     npm test
       - name: Test Report
         uses: mikepenz/action-junit-report@v4
         if: ${{ !cancelled() }}
         with:
           report_paths: junit.xml # Path to test results
           token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: app.logs
+          path: app.logs
