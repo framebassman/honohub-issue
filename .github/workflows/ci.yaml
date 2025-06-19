@@ -28,6 +28,9 @@ jobs:
       - name: Run database
         run: |
           docker compose up -d
+      - name: Run application
+        run: |
+          npm run dev &
       # - name: UI unit tests
       #   run: |
       #     npm test
