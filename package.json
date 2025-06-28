@@ -1,13 +1,17 @@
 {
   "name": "honohub-issue",
   "scripts": {
-    "dev": "wrangler dev",
+    "dev": "DATABASE_URL=postgres://test:test@localhost:5432/test wrangler dev",
     "deploy": "wrangler deploy --minify",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings",
-    "test": "playwright test"
+    "test": "playwright test",
+    "migrate": "DATABASE_URL=postgres://test:test@localhost:5432/test drizzle-kit migrate"
   },
   "dependencies": {
+    "@honohub/vite": "^0.1.11",
     "@neondatabase/serverless": "^1.0.1",
+    "drizzle-kit": "^0.31.4",
+    "drizzle-orm": "^0.44.2",
     "hono": "^4.7.11",
     "honohub": "^0.3.0"
   },
