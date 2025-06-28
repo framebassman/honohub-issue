@@ -1,29 +1,5 @@
-node_modules
-
-# prod
-dist/
-
-# dev
-.yarn/
-!.yarn/releases
-.vscode/*
-!.vscode/launch.json
-!.vscode/*.code-snippets
-.idea/workspace.xml
-.idea/usage.statistics.xml
-.idea/shelf
-
-# deps
-node_modules/
-.wrangler
-
-# env
-.env
-.env.production
-.dev.vars
-
-# logs
-logs/
+# Logs
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -31,11 +7,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# misc
+node_modules
+dist
+dist-ssr
+*.local
+.dev.vars
+.wrangler
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-
-
-playwright-report
-test-results
-junit.xml
-app.logs
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
