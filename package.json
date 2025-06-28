@@ -20,7 +20,12 @@
     "publish": true
   },
   "dependencies": {
+    "@honohub/react": "^0.2.0",
+    "@honohub/vite": "^0.1.11",
     "@tailwindcss/postcss": "4.1.4",
+    "drizzle-kit": "^0.31.4",
+    "drizzle-orm": "^0.44.2",
+    "honohub": "^0.3.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-router": "7.6.3",
@@ -53,9 +58,11 @@
     "cf-typegen": "wrangler types",
     "check": "vite build && wrangler deploy --dry-run",
     "deploy": "wrangler deploy",
-    "dev": "vite",
+    "dev": "DATABASE_URL=postgres://myuser:mypassword@localhost:5432/mydatabase vite",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "migrate": "DATABASE_URL=postgres://myuser:mypassword@localhost:5432/mydatabase drizzle-kit migrate",
+    "generate": "DATABASE_URL=postgres://myuser:mypassword@localhost:5432/mydatabase drizzle-kit generate"
   },
   "type": "module"
 }
