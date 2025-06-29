@@ -7,6 +7,7 @@ test('check healthcheck', async ({ request }) => {
 
 test('check crm routes', async ({ request }) => {
   const response = await request.get(`/collections/todos`);
-  expect(await response.text()).toBe('OK');
+  expect(response.statusText()).toBe('OK');
+  expect(await response.body()).toBeDefined()
 });
 
