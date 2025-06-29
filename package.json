@@ -4,12 +4,18 @@
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "db:generate": "drizzle-kit generate --dialect postgresql --schema src/db/schema.ts --out src/db/migrations",
+    "db:migrate": "tsx ./src/db/migrate.ts",
+    "db:seed": "tsx ./src/db/seed.ts",
     "test": "playwright test"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.1",
+    "drizzle-kit": "^0.31.4",
+    "drizzle-orm": "^0.44.2",
     "hono": "^4.7.11",
-    "honohub": "^0.3.0"
+    "honohub": "^0.3.0",
+    "tsx": "^4.20.3"
   },
   "devDependencies": {
     "@playwright/test": "^1.53.1",
