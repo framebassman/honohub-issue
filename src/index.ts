@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import { createHub } from "honohub";
+import { createHub } from "kolenkainc-honohub";
 import { cors } from "hono/cors";
 import hubConfig from "../hub.config";
 

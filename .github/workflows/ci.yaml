@@ -24,7 +24,7 @@ jobs:
           cache-dependency-path: package-lock.json
       - name: Install dependencies
         run: |
-          npm ci --legacy-peer-deps
+          npm ci
       - name: Run application
         run: |
           npm run dev > app.logs & 2>&1

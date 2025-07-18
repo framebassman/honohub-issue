@@ -12,9 +12,9 @@
   "dependencies": {
     "@neondatabase/serverless": "^1.0.1",
     "drizzle-kit": "^0.31.4",
-    "drizzle-orm": "^0.44.2",
+    "drizzle-orm": "^0.44.3",
     "hono": "^4.7.11",
-    "honohub": "^0.3.0",
+    "kolenkainc-honohub": "^0.3.3",
     "tsx": "^4.20.3"
   },
   "devDependencies": {
